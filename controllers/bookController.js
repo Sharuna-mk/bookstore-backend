@@ -145,8 +145,8 @@ const line_items = [
 
  const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card" ],
-  success_url: 'http://localhost:5173/payment-success',
-  cancel_url: 'http://localhost:5173/payment-error',
+  success_url: 'https://bookstore-frontend-bay-one.vercel.app/payment-success',
+  cancel_url: 'https://bookstore-frontend-bay-one.vercel.app/payment-error',
   line_items, 
   mode: 'payment',
 });
