@@ -8,11 +8,14 @@ const router = require('./router/route')
 // const applicationMiddleware = require('./middlewares/applicationMIddleware')
 
 //create express application
-const bookstoreserver = express()
+const bookstoreserver = express( )
 
 //middleware
 //cors- to avoid http blocking while sending request from frontend to backend
-bookstoreserver.use(cors())
+bookstoreserver.use(cors({
+  origin: process.env.CLIENT_URL,
+  credentials: true
+}))
 //express.json()-used for parsing (json - js)
 bookstoreserver.use(express.json())
 

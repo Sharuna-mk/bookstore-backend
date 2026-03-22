@@ -11,6 +11,7 @@ const adminJwtMiddleware = (req,res,next)=>{
           req.role = jwtVerification.role
           if(jwtVerification.role == 'Admin'){
           next()
+          
           }
           else{
             res.status(403).json("Authorization failed... Only for Admin")
